@@ -8,10 +8,6 @@ for (let i = 0; i < 25; i++) {
 		// Index, necessary for comparisons later
 		id: i,
 
-		// random number, necessary for picking 8 random cards to fill the
-		// board with later
-		random: Math.random(),
-
 		// the offsets on the sprite sheet file. this steps over the whole
 		// file with steps of 48 px, so the index can later be assigned the
 		// right part of the image
@@ -19,3 +15,6 @@ for (let i = 0; i < 25; i++) {
 		yOffset: imgEdgeLength * (Math.floor(i / 5) % 5)
 	})
 }
+
+console.log("done loading imgData")
+
