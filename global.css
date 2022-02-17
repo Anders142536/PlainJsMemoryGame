@@ -1,0 +1,32 @@
+:root {
+	--black: #28252a;
+	--dgray: #242126;
+	--gray:  #342e37;
+	--white: #ebfff7;
+	--green: #67bb3a;
+	--blue:  #3c91e6;
+	--red:   #e63946;
+}
+
+body {
+	background: var(--black);
+	color: var(--white);
+	
+	display: flex;
+	justify-content: center;
+}
+
+body > div {
+	background: var(--gray);
+	border-radius: 5px;
+	padding: 10px;
+	margin: 20px;
+	box-shadow: 0 0 20px var(--dgray);
+}
+
+.board {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px 10px;
+}
+
