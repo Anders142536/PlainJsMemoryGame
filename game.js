@@ -1,3 +1,3 @@
 import { imgData } from "./imageData.js"	
 
-console.log("test")
+console.log(imgData)
