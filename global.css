@@ -19,14 +19,28 @@ body {
 body > div {
 	background: var(--gray);
 	border-radius: 5px;
-	padding: 10px;
+	padding: 20px;
 	margin: 20px;
 	box-shadow: 0 0 20px var(--dgray);
 }
 
-.board {
+/* the div with the id "board" */
+#board {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	gap: 10px 10px;
 }
 
+.card {
+	box-shadow: 0 0 10px var(--black);
+	border-radius: 5px;
+	border: 7px solid var(--dgray);
+}
+
+.card:hover {
+	box-shadow: 0 0 10px var(--white);
+}
+
+.card[state='UP']			{ border: 7px solid var(--blue);  }
+.card[state='CORRECT']		{ border: 7px solid var(--green); }
+.card[state='INCORRECT']	{ border: 7px solid var(--red);	  }

@@ -1,24 +1,43 @@
-import { imgData } from "./imageData.js"	
+/*  
+ * This file takes care of all the game logic.
+ */
 
-let rCards = pickRandomCards()
+import * as deck from './imageData.js'
+import * as board from './boardRenderer.js'
+import { states } from './enums.js'
 
 
+board.loadImgFiles()
 
-function pickRandomCards() {
-	randomize(imgData)
+waitForLoadingToComplete()
 
-	// removing every entry after the 8th
-	imgData.splice(8)
-
-	// adding again all values of imgData, practically duplicating the array
-	imgData.push(...imgData)
-
-	randomize(imgData)
-
-	console.log(imgData)
+function waitForLoadingToComplete() {
+	if (board.isDoneLoading()) {
+		console.log("done loading")
+		startGame()
+	} else {
+		console.log("not done loading")
+		setTimeout(waitForLoadingToComplete, 100)
+	}
 }
 
-// sorts a given array randomly
-function randomize(array) {
-	array.sort(() => { return 0.5 - Math.random() } )
+function startGame() {
+	let cards = deck.get8ShuffledRandomPairs()
+
+	board.addCardsToBoard(cards)
 }
+
+export function cardClicked(card) {
+	let cardId = card.getAttribute('cardId')
+	console.log("clicked card #" + cardId)
+	
+	// if a card that is already revealed is clicked we ignore it
+	if (card.getAttribute('state') !== states.down) return
+	
+	board.revealCard(card)
+	
+}
+
+
+
+
