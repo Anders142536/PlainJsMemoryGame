@@ -49,16 +49,13 @@ export function addCardsToBoard(toAdd) {
 			cardClicked(event.target)
 		})
 		board.appendChild(c)
-
-		//console.log(rear)
-		c.getContext('2d').drawImage(rear, 0, 0)
+		
+		veilCard(c)
 	}
 	console.log("done adding cards to board")
 }
 
-export function revealCard(card) {
-	card.setAttribute('state', states.up)
-
+export function unveilCard(card) {
 	let cardInfo = cards[card.getAttribute('cardId')]
 	card.getContext('2d').drawImage(front,
 		cardInfo.xOffset,
@@ -68,3 +65,9 @@ export function revealCard(card) {
 		96, 96	// how big we want to draw, in this case 2x scaling
 	)
 }
+
+export function veilCard(card) {
+	card.setAttribute('state', states.down)
+	card.getContext('2d').drawImage(rear, 0, 0)
+}
+
