@@ -11,6 +11,9 @@ let failedAttempts
 let firstPick
 let secondPick
 
+document.getElementById('restart').addEventListener('click', startNewGame)
+let points = document.getElementById('points')
+
 board.loadImgFiles()
 waitForLoadingToComplete()
 
@@ -29,6 +32,7 @@ function startNewGame() {
 	firstPick = null
 	secondPick = null
 	failedAttempts = 0
+	points.innerHTML = '10/10'
 
 	board.addCardsToBoard(cards)
 }
@@ -66,6 +70,7 @@ export function cardClicked(card) {
 				setState(secondPick, states.incorrect)
 
 				failedAttempts++
+				points.innerHTML = Math.max(0, 10 - failedAttempts) + '/10'
 			}
 		} else {
 			// happens at the very first pick, as otherwise there is always at

@@ -37,8 +37,10 @@ body > div {
 	align-items: center;
 }
 
-p {
-	margin: 0 10px;
+p#points {
+	margin: 0 20px 0 0;
+	min-width: 50px;
+	text-align: right;
 }
 
 button {

@@ -38,6 +38,12 @@ export function addCardsToBoard(toAdd) {
 
 	const board = document.getElementById('board')
 
+	// deleting all existing canvases
+	while (board.firstChild) {
+		board.removeChild(board.firstChild)
+	}
+
+	// add all necessary canvases
 	for (let i = 0; i < cards.length; i++) {
 		let c = document.createElement('canvas')
 		c.setAttribute('cardId', i)
