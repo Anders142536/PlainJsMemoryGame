@@ -6,6 +6,8 @@
 	--green: #67bb3a;
 	--blue:  #3c91e6;
 	--red:   #e63946;
+	font-family: 'Sans-serif';
+	font-size: 15px;
 }
 
 body {
@@ -22,6 +24,38 @@ body > div {
 	padding: 20px;
 	margin: 20px;
 	box-shadow: 0 0 20px var(--dgray);
+}
+
+.header {
+	margin: 0 0 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header > div {
+	display: flex;
+	align-items: center;
+}
+
+p {
+	margin: 0 10px;
+}
+
+button {
+	background-color: var(--white);
+	outline: none;
+	border: none;
+	color: var(--black);
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 15px;
+}
+
+h1 {
+	margin: 0;
+	font-family: 'Georgia';
+	text-shadow: 1px 1px 1px var(--blue),
+				 2px 2px 1px var(--blue);
 }
 
 /* the div with the id "board" */
