@@ -48,7 +48,6 @@ export function addCardsToBoard(toAdd) {
 		let c = document.createElement('canvas')
 		c.setAttribute('cardId', i)
 		c.setAttribute('class', 'card')
-		c.setAttribute('state', states.down)
 		c.setAttribute('width', '96')
 		c.setAttribute('height', '96')
 		c.addEventListener('click', (event) => {
